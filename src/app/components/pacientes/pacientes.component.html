@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="sidebar">
+      <h2>SaludAlDía</h2>
+      <ul>
+        <li><button routerLink="/" class="sidebar-btn">👤 Profesionales</button></li>
+        <li><button routerLink="/paciente" class="sidebar-btn">👥 Paciente</button></li>
+        <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
+        <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
+      </ul>
+    </div>
+  
+    <div class="main-content">
+      <div class="header">
+        <span class="user-email"></span>
+        <button class="logout-btn">Cerrar sesión</button>
+      </div>
+      
+      <div class="summary">
+        
+        <h2>Formulario de Paciente</h2>
+        <form [formGroup]="pacienteForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="fechaCita">Fecha de la cita:</label>
+            <input id="fechaCita" formControlName="fechaCita" type="date" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="servicio">Servicio:</label>
+            <input id="servicio" formControlName="servicio" type="text" class="form-control" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="motivo">Motivo:</label>
+            <input id="motivo" formControlName="motivo" type="text" class="form-control" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="enfermedadActual">Enfermedad actual:</label>
+            <input id="enfermedadActual" formControlName="enfermedadActual" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="revisionSistemas">Revisión sistemas:</label>
+            <input id="revisionSistemas" formControlName="revisionSistemas" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="examenFisico">Examen Físico:</label>
+            <input id="examenFisico" formControlName="examenFisico" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="ayudaDiagnostica">Ayuda diagnóstica:</label>
+            <input id="ayudaDiagnostica" formControlName="ayudaDiagnostica" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="analisis">Análisis:</label>
+            <input id="analisis" formControlName="analisis" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="dxPrincipal">DX principal:</label>
+            <input id="dxPrincipal" formControlName="dxPrincipal" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="tipoDiagnostico">Tipo Diagnóstico:</label>
+            <input id="tipoDiagnostico" formControlName="tipoDiagnostico" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="finalidadConsulta">Finalidad consulta:</label>
+            <input id="finalidadConsulta" formControlName="finalidadConsulta" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="causaExterna">Causa externa:</label>
+            <input id="causaExterna" formControlName="causaExterna" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="tratamiento">Tratamiento:</label>
+            <input id="tratamiento" formControlName="tratamiento" type="text" class="form-control">
+          </div>
+      
+          <div class="form-group">
+            <label for="recomendacion">Recomendación:</label>
+            <input id="recomendacion" formControlName="recomendacion" type="text" class="form-control">
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+        
+      </div>
+    </div>
+</div>

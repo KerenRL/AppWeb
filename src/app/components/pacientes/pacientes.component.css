@@ -1,0 +1,90 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  body, html {
+    background-color: #EBE1EE;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #EBE1EE;
+    padding: 20px;
+  }
+  
+  .sidebar-btn {
+    background-color: transparent;
+    border: none;
+    color: #5d5d5d;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .sidebar-btn:hover {
+    background-color: #d3c0dd;
+    color: #000;
+  }
+  
+  .main-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EBE1EE;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  .logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color:#c0392b;
+}
