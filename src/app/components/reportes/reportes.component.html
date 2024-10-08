@@ -1,45 +1,45 @@
 <div class="page-container">
-    <div class="top-bar">
-      <button class="logout-btn">Cerrar sesión</button>
+  <div class="top-bar">
+    <button routerLink="/" class="logout-btn">Cerrar sesión</button>
+  </div>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <ul>
+          <li><button routerLink="/home" class="sidebar-btn">👤 Profesionales</button></li>
+          <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
+          <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
+          <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
+      </ul>
     </div>
-  
-    <div class="main-container">
-      <div class="sidebar">
-        <ul>
-            <li><button routerLink="/" class="sidebar-btn">👤 Profesionales</button></li>
-            <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
-            <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
-            <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
-        </ul>
-      </div>
-  
-      <div class="content-container">
-        <h2 class="report-title">Agenda de Reportes</h2>
-        
-        <div class="report-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Motivo</th>
-                <th>Diagnóstico</th>
-                <th>Tratamiento</th>
-                <th>Completado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let reporte of reportes">
-                <td>{{ reporte.fechaCita }}</td> 
-                <td>{{ reporte.motivo }}</td> 
-                <td>{{ reporte.diagnostico }}</td> 
-                <td>{{ reporte.tratamiento }}</td> 
-                <td>
-                  <input type="checkbox" [(ngModel)]="reporte.completada" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+    <div class="content-container">
+      <h2 class="report-title">Agenda de Reportes</h2>
+      
+      <div class="report-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Motivo</th>
+              <th>Diagnóstico</th>
+              <th>Tratamiento</th>
+              <th>Completado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reporte of reportes">
+              <td>{{ reporte.fechaCita }}</td> 
+              <td>{{ reporte.motivo }}</td> 
+              <td>{{ reporte.diagnostico }}</td> 
+              <td>{{ reporte.tratamiento }}</td> 
+              <td>
+                <input type="checkbox" [(ngModel)]="reporte.completada" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
 </div>

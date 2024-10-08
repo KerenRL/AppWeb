@@ -1,28 +1,36 @@
 <div class="sidebar">
     <h2>SaludAlDía</h2>
     <ul>
-        <li><button routerLink="/" class="sidebar-btn">👤 Profesionales</button></li>
-        <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
-        <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
-        <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
+      <li><button routerLink="/home" class="sidebar-btn">👤 Profesionales</button></li>
+      <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
+      <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
+      <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
     </ul>
-</div>
-
-<div class="content">
+  </div>
+  
+  <div class="content">
     <div class="header">
-        <span class="user-email"></span>
-        <button class="logout-btn">Cerrar sesión</button>
+      <span class="user-email"></span>
+      <button routerLink="/" class="logout-btn">Cerrar sesión</button>
     </div>
-
+  
     <div class="summary">
-        <h2>Citas Agendadas</h2>
+      <h2>Citas Agendadas</h2>
+  
+      <div *ngIf="pacienteData.length > 0; else noCitas">
         <div *ngFor="let cita of pacienteData; let i = index">
-            <div *ngIf="!completadas.has(i)" class="cita-item">
-                <p><strong>Fecha de la cita:</strong> {{ cita.fechaCita }}</p>
-                <p><strong>Servicio:</strong> {{ cita.servicio }}</p>
-                <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
-                <button (click)="toggleCompletada(i)">Marcar como completada</button>
-            </div>
+          <div *ngIf="!completadas.has(i)" class="cita-item">
+            <p><strong>Fecha de la cita:</strong> {{ cita.fechaCita }}</p>
+            <p><strong>Servicio:</strong> {{ cita.servicio }}</p>
+            <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
+            <button (click)="toggleCompletada(i)">Marcar como completada</button>
+          </div>
         </div>
-    </div>
+      </div>
+  
+      
+      <ng-template #noCitas>
+        <p>No hay citas agendadas.</p>
+      </ng-template>
+   </div>
 </div>

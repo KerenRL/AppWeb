@@ -1,48 +1,49 @@
 <div class="container">
-  <div class="sidebar">
-      <h2>SaludAlDía</h2>
-      <ul>
-          <li><button routerLink="/" class="sidebar-btn">👤 Profesionales</button></li>
-          <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
-          <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
-          <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
-      </ul>
+    <div class="sidebar">
+        <h2>SaludAlDía</h2>
+        <ul>
+            <li><button routerLink="/home" class="sidebar-btn">👤 Profesionales</button></li>
+            <li><button routerLink="/pacientes" class="sidebar-btn">👥 Paciente</button></li>
+            <li><button routerLink="/agenda" class="sidebar-btn">📅 Agenda</button></li>
+            <li><button routerLink="/reportes" class="sidebar-btn">📊 Reportes</button></li>
+        </ul>
+    </div>
+  
+    <div class="main-content">
+        <div class="header">
+            <span class="user-email"></span>
+            <button routerLink="/" class="logout-btn">Cerrar sesión</button>
+        </div>
+        
+        <div class="agenda-container">
+            <h2>Agenda de Citas</h2>
+            
+            <div *ngIf="!citas || citas.length === 0">
+                <p>No hay citas programadas.</p>
+            </div>
+            
+            <ul>
+                <li *ngFor="let cita of citas">
+                    <div class="cita-details">
+                        <p><strong>Fecha de la cita:</strong> {{cita.fechaCita}}</p>
+                        <p><strong>Servicio:</strong> {{ cita.servicio }}</p>
+                        <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
+                        <p><strong>Enfermedad actual:</strong> {{ cita.enfermedadActual }}</p>
+                        <p><strong>Revisión sistemas:</strong> {{ cita.revisionSistemas }}</p>
+                        <p><strong>Examen Físico:</strong> {{ cita.examenFisico }}</p>
+                        <p><strong>Ayuda diagnóstica:</strong> {{ cita.ayudaDiagnostica }}</p>
+                        <p><strong>Análisis:</strong> {{ cita.analisis }}</p>
+                        <p><strong>DX principal:</strong> {{ cita.dxPrincipal }}</p>
+                        <p><strong>Tipo Diagnóstico:</strong> {{ cita.tipoDiagnostico }}</p>
+                        <p><strong>Finalidad consulta:</strong> {{ cita.finalidadConsulta }}</p>
+                        <p><strong>Causa externa:</strong> {{ cita.causaExterna }}</p>
+                        <p><strong>Tratamiento:</strong> {{ cita.tratamiento }}</p>
+                        <p><strong>Recomendación:</strong> {{ cita.recomendacion }}</p>
+                    </div>
+                    <hr>
+                </li>
+            </ul>
+        </div>
+    </div>
   </div>
-
-  <div class="main-content">
-      <div class="header">
-          <span class="user-email"></span>
-          <button class="logout-btn">Cerrar sesión</button>
-      </div>
-      
-      <div class="agenda-container">
-          <h2>Agenda de Citas</h2>
-          
-          <div *ngIf="citas.length === 0">
-              <p>No hay citas programadas.</p>
-          </div>
-          
-          <ul>
-              <li *ngFor="let cita of citas">
-                  <div class="cita-details">
-                      <p><strong>Fecha de la cita:</strong> {{ cita.fechaCita }}</p>
-                      <p><strong>Servicio:</strong> {{ cita.servicio }}</p>
-                      <p><strong>Motivo:</strong> {{ cita.motivo }}</p>
-                      <p><strong>Enfermedad actual:</strong> {{ cita.enfermedadActual }}</p>
-                      <p><strong>Revisión sistemas:</strong> {{ cita.revisionSistemas }}</p>
-                      <p><strong>Examen Físico:</strong> {{ cita.examenFisico }}</p>
-                      <p><strong>Ayuda diagnóstica:</strong> {{ cita.ayudaDiagnostica }}</p>
-                      <p><strong>Análisis:</strong> {{ cita.analisis }}</p>
-                      <p><strong>DX principal:</strong> {{ cita.dxPrincipal }}</p>
-                      <p><strong>Tipo Diagnóstico:</strong> {{ cita.tipoDiagnostico }}</p>
-                      <p><strong>Finalidad consulta:</strong> {{ cita.finalidadConsulta }}</p>
-                      <p><strong>Causa externa:</strong> {{ cita.causaExterna }}</p>
-                      <p><strong>Tratamiento:</strong> {{ cita.tratamiento }}</p>
-                      <p><strong>Recomendación:</strong> {{ cita.recomendacion }}</p>
-                  </div>
-                  <hr>
-              </li>
-          </ul>
-      </div>
-  </div>
-</div>
+  
